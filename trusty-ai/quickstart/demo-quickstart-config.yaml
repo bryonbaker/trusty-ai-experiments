@@ -23,4 +23,5 @@ data:
           - detect sensitive data on input
           - regex check input
   rails.co: |
-    # Using built-in rails only
+    define bot inform answer unknown
+        "<INSERT YOUR CUSTOM TEXT HERE>"

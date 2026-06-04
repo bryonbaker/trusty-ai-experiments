@@ -6,9 +6,9 @@ metadata:
     security.opendatahub.io/enable-auth: 'true'
 spec:
   nemoConfigs:
-    - name: nemo-guardrails-with-llm-config
+    - name: nemo-config
       configMaps:
-        - nemo-guardrails-with-llm-config
+        - nemo-config
   env:
     - name: OPENAI_API_KEY
       valueFrom:
