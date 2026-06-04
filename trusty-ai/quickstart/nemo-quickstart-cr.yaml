@@ -1,0 +1,14 @@
+apiVersion: trustyai.opendatahub.io/v1alpha1
+kind: NemoGuardrails
+metadata:
+  name: nemo-quickstart
+  annotations:
+    security.opendatahub.io/enable-auth: 'true'
+spec:
+  nemoConfigs:
+    - name: nemo-quickstart-config
+      configMaps:
+        - nemo-quickstart-config
+  env:
+    - name: OPENAI_API_KEY
+      value: not-used

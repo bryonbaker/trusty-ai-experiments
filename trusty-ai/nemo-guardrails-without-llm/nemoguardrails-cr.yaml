@@ -1,0 +1,14 @@
+apiVersion: trustyai.opendatahub.io/v1alpha1
+kind: NemoGuardrails
+metadata:
+  name: nemo-guardrails-without-llm
+  annotations:
+    security.opendatahub.io/enable-auth: 'true'
+spec:
+  nemoConfigs:
+    - name: nemo-guardrails-without-llm-config
+      configMaps:
+        - nemo-guardrails-without-llm-config
+  env:
+    - name: OPENAI_API_KEY
+      value: not-used

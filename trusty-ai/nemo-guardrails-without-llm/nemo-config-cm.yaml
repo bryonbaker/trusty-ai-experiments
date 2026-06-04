@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nemo-guardrails-without-llm-config
+data:
+  config.yaml: |
+    rails:
+      config:
+        sensitive_data_detection:
+          input:
+            entities:
+              - EMAIL_ADDRESS
+              - PERSON
+              - PHONE_NUMBER
+        regex_detection:
+          input:
+            patterns:
+              - "\\\\b(password|secret|api[_-]?key|token)\\\\b"
+              - "\\\\d{3}-\\\\d{2}-\\\\d{4}"
+            case_insensitive: true
+      input:
+        flows:
+          - detect sensitive data on input
+          - regex check input
+  rails.co: |
+    # Using built-in rails only
